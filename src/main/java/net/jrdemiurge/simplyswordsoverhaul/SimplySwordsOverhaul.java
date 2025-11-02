@@ -3,11 +3,10 @@ package net.jrdemiurge.simplyswordsoverhaul;
 import com.mojang.logging.LogUtils;
 import net.jrdemiurge.simplyswordsoverhaul.scheduler.Scheduler;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.common.MinecraftForge;
 import net.neoforged.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.event.server.ServerStartingEvent;
-import net.neoforged.eventbus.api.IEventBus;
-import net.neoforged.eventbus.api.SubscribeEvent;
+import net.neoforged.fml.server.ServerStartingEvent;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -22,9 +21,7 @@ public class SimplySwordsOverhaul
     public static final String MOD_ID = "simply_swords_overhaul";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public SimplySwordsOverhaul() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+    public SimplySwordsOverhaul(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);

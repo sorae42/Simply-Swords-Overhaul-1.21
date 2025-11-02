@@ -1,7 +1,7 @@
 package net.jrdemiurge.simplyswordsoverhaul.scheduler;
 
 import net.jrdemiurge.simplyswordsoverhaul.SimplySwordsOverhaul;
-import net.neoforged.event.TickEvent;
+import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.eventbus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 
@@ -20,7 +20,7 @@ public class Scheduler {
     }
 
     @SubscribeEvent
-    public static void onServerTick(TickEvent.ServerTickEvent event) {
+    public static void onServerTick(ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
             synchronized (tasks) {
                 Iterator<SchedulerTask> iterator = tasks.iterator();
