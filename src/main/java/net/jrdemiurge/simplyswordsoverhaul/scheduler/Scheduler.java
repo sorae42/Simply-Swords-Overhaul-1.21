@@ -1,9 +1,9 @@
 package net.jrdemiurge.simplyswordsoverhaul.scheduler;
 
 import net.jrdemiurge.simplyswordsoverhaul.SimplySwordsOverhaul;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.event.TickEvent;
+import net.neoforged.eventbus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 
 import java.util.ArrayList;
 import java.util.Iterator;

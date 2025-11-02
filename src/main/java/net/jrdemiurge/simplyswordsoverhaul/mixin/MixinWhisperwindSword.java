@@ -24,8 +24,8 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.item.UniqueSwordItem;
 import net.sweenus.simplyswords.item.custom.WhisperwindSwordItem;
@@ -201,7 +201,7 @@ public abstract class MixinWhisperwindSword extends UniqueSwordItem {
             enchantmentBonus = EnchantmentHelper.getDamageBonus(player.getMainHandItem(), MobType.UNDEFINED);
         }
 
-        net.minecraftforge.event.entity.player.CriticalHitEvent hitResult = net.minecraftforge.common.ForgeHooks.getCriticalHit(player, target, true, true ? 1.5F : 1.0F);
+        net.neoforged.event.entity.player.CriticalHitEvent hitResult = net.neoforged.common.ForgeHooks.getCriticalHit(player, target, true, true ? 1.5F : 1.0F);
         boolean flag2 = hitResult != null;
         if (flag2) {
             baseDamage *= hitResult.getDamageModifier();
